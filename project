@@ -1,0 +1,54 @@
+#!/bin/bash
+
+
+clear
+
+mkdir="Create_a_directory"
+touch="Create_a_file"
+yum="Install_a_package_and_software"
+restart="Reboot_your_pc"
+date="Check_current_date_and_time"
+google="search_on_google"
+adduser="Create_a_user_and_password"
+song="play_song"
+
+
+select comm in $mkdir $touch $yum $restart $date $google $adduser $song
+do
+	if [ "$comm" = "$mkdir" ]
+	then
+		read -p "Enter your directory name :- " rrrr
+		
+		mkdir $rrrr
+		break
+	fi
+	
+	if [ "$comm" = "$touch" ]
+	then
+		read -p "Enter your file name :- " file
+
+		touch $file
+		break
+	fi
+	if [ "$comm" = "$yum" ]
+	then
+		read -p "Enter the package and software name :- " soft
+
+		yum install $soft
+		break
+	fi
+	if [ "$comm" = "$restart" ]
+	then
+		sudo reboot
+	fi
+	if [ "$comm" = "$date" ]
+	then
+		date
+		break
+	fi
+	if ["$comm" = "$google" ]
+	then
+		echo
+		break
+	fi
+done
