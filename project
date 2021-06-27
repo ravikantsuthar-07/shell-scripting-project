@@ -3,19 +3,21 @@
 
 clear
 
-mkdir="Create_a_directory"
-touch="Create_a_file"
-yum="Install_a_package_and_software"
-restart="Reboot_your_pc"
-date="Check_current_date_and_time"
-google="search_on_google"
-adduser="Create_a_user_and_password"
+kdir="Create_a_directory"
+ouch="Create_a_file"
+y="Install_a_package_and_software"
+estart="Reboot_your_pc"
+dae="Check_current_date_and_time"
+oogle="search_on_google"
+ser="Create_a_user_and_password"
 song="play_song"
+top="Google_top_5_url"
+fb="Login_your_fb_account_and_update_status"
 
 
-select comm in $mkdir $touch $yum $restart $date $google $adduser $song
+select comm in $kdir $ouch $y $estart $dae $oogle $ser $song $top $fb
 do
-	if [ "$comm" = "$mkdir" ]
+	if [ "$comm" = "$kdir" ]
 	then
 		read -p "Enter your directory name :- " rrrr
 		
@@ -23,32 +25,67 @@ do
 		break
 	fi
 	
-	if [ "$comm" = "$touch" ]
+	if [ "$comm" = "$ouch" ]
 	then
 		read -p "Enter your file name :- " file
 
 		touch $file
 		break
 	fi
-	if [ "$comm" = "$yum" ]
+	
+	if [ "$comm" = "$y" ]
 	then
 		read -p "Enter the package and software name :- " soft
 
 		yum install $soft
 		break
 	fi
-	if [ "$comm" = "$restart" ]
+	
+	if [ "$comm" = "$estart" ]
 	then
 		sudo reboot
 	fi
-	if [ "$comm" = "$date" ]
+	
+	if [ "$comm" = "$dae" ]
 	then
 		date
 		break
 	fi
-	if ["$comm" = "$google" ]
+
+	if [ "$comm" = "$oogle" ]
 	then
-		echo
+		read -p "Google seach :- " uurl
+                googler $uurl
+                break
+	fi
+	
+	if [ "$comm" = "$ser" ]
+	then
+		read -p "Enter your user to create :- " user
+		
+		useradd $user
+		
+		read -m "Enter the password :- " pass
+		
+		passwd $user
+		
+		$pass
+
 		break
 	fi
+
+	if [ "$comm" = "$song" ]
+      	then
+                read -p "Enter the path of Music" music
+                play $music
+                break
+        fi
+
+        if [ "$comm" = "$top" ]
+        then
+                read -p "Google seach :- " topurl
+                googler --count=88888888 $topurl
+                break
+        fi
+
 done
