@@ -83,7 +83,7 @@ do
         if [ "$comm" = "$top" ]
         then
                 read -p "Google seach :- " topurl
-                googler --count=88888888 $topurl
+                googler --count=8 $topurl
                 break
         fi
 
