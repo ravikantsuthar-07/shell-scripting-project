@@ -12,7 +12,6 @@ oogle="search_on_google"
 ser="Create_a_user_and_password"
 song="play_song"
 top="Google_top_5_url"
-fb="Login_your_fb_account_and_update_status"
 
 
 select comm in $kdir $ouch $y $estart $dae $oogle $ser $song $top $fb
