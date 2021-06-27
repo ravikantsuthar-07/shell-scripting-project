@@ -62,13 +62,7 @@ do
 	then
 		read -p "Enter your user to create :- " user
 		
-		useradd $user
-		
-		read -m "Enter the password :- " pass
-		
-		passwd $user
-		
-		$pass
+		adduser $user
 
 		break
 	fi
